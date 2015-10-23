@@ -4,7 +4,7 @@ namespace Animals;
 
 class Turtle implements AnimalsInterface
 {
-    use GeneralFunctions;
+    use GeneralTrait;
     use SpeedTrait;
 
     private $age;
@@ -23,5 +23,14 @@ class Turtle implements AnimalsInterface
     public function setAge($age)
     {
         $this->age = $age;
+    }
+
+    public function printSpecial()
+    {
+        if ($this->getAge()) {
+            $str = "Special information! ";
+            $str .= "Age: ".$this->getAge()."<br>";
+            echo $str;
+        }
     }
 }

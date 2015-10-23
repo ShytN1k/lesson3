@@ -20,7 +20,7 @@ class Ostrich extends Bird
     public function setSpeed($speed)
     {
 
-        if ($speed>=70){
+        if ($speed >= 70) {
             $this->speed = 70;
         } else {
             $this->speed = $speed;

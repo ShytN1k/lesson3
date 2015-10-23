@@ -4,7 +4,7 @@ namespace Animals;
 
 abstract class Bird implements AnimalsInterface
 {
-    use GeneralFunctions;
+    use GeneralTrait;
 
     private $owner;
 
@@ -22,5 +22,14 @@ abstract class Bird implements AnimalsInterface
     public function setOwner($owner)
     {
         $this->owner = $owner;
+    }
+
+    public function printSpecial()
+    {
+        if ($this->getOwner()) {
+            $str = "Special information! ";
+            $str .= "Owner: ".$this->getOwner()."<br>";
+            echo $str;
+        }
     }
 }

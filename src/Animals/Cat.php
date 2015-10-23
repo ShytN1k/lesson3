@@ -4,7 +4,7 @@ namespace Animals;
 
 class Cat implements AnimalsInterface
 {
-    use GeneralFunctions;
+    use GeneralTrait;
     use SpeedTrait;
 
     private $breed;
@@ -23,5 +23,14 @@ class Cat implements AnimalsInterface
     public function setBreed($breed)
     {
         $this->breed = $breed;
+    }
+
+    public function printSpecial()
+    {
+        if ($this->getBreed()) {
+            $str = "Special information! ";
+            $str .= "Breed: ".$this->getBreed()."<br>";
+            echo $str;
+        }
     }
 }
